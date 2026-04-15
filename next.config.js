@@ -6,6 +6,9 @@ const nextConfig = {
       { protocol: 'https', hostname: 'cdn.sanity.io' },
     ],
   },
+  experimental: {
+    serverComponentsExternalPackages: ['sanity', '@sanity/client', 'next-sanity'],
+  },
 }
 
 module.exports = nextConfig

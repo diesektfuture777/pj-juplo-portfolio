@@ -5,16 +5,27 @@ import Image from 'next/image'
 import { Play } from 'lucide-react'
 
 export default function WorkCard({ work, featured = false }) {
-  const { title, slug, type, category, coverImage } = work
+  const { title, slug, type, category, coverImage, videoFile } = work
 
   return (
     <Link href={`/portfolio/${slug}`} className="block group relative overflow-hidden">
       <div className={`relative overflow-hidden ${featured ? 'aspect-[3/4]' : 'aspect-square'}`}>
-        {coverImage ? (
+        {type === 'video' && videoFile ? (
+          <video
+            src={videoFile}
+            poster={coverImage || undefined}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+          />
+        ) : coverImage ? (
           <Image
             src={coverImage}
             alt={title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
           />
         ) : (

@@ -10,9 +10,9 @@ export default async function AboutPage() {
     <main className="min-h-screen bg-bg">
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
-          <div className="relative aspect-[3/4] w-full max-w-md">
+          <div className="relative aspect-[3/4] w-full max-w-md overflow-hidden">
             {portrait ? (
-              <Image src={portrait} alt="PJ Juplo" fill className="object-cover" />
+              <Image src={portrait} alt="PJ Juplo" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-[#C8C3BB] to-[#9A9590]" />
             )}

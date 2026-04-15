@@ -13,5 +13,5 @@ export const mockSettings = {
   seoDesc: 'Portfolio of PJ Juplo, photographer and filmmaker based in Manila.',
   instagram: 'https://instagram.com/pjjuplo',
   facebook: 'https://facebook.com/pjjuplo',
-  email: 'hello@pjjuplo.com',
+  email: 'hello@pjjuplo.art',
 }
