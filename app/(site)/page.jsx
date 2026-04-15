@@ -1,13 +1,14 @@
 // app/(site)/page.jsx
 import HeroSplit from '@/components/HeroSplit'
-import mockWorks from '@/data/mockWorks'
+import { getAllWorks } from '@/lib/data'
 
 export const metadata = {
   title: 'PJ Juplo — Photographer & Filmmaker',
   description: 'Portfolio of PJ Juplo, photographer and filmmaker based in Manila.',
 }
 
-export default function HeroPage() {
-  const featured = mockWorks.find(w => w.featured) || mockWorks[0]
+export default async function HeroPage() {
+  const works = await getAllWorks()
+  const featured = works.find(w => w.featured) || works[0]
   return <HeroSplit featuredWork={featured} />
 }

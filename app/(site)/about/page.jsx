@@ -1,11 +1,11 @@
 // app/(site)/about/page.jsx
 import Image from 'next/image'
-import { mockAbout } from '@/data/mockSite'
+import { getAbout } from '@/lib/data'
 
 export const metadata = { title: 'About — PJ Juplo' }
 
-export default function AboutPage() {
-  const { headline, bio, portrait } = mockAbout
+export default async function AboutPage() {
+  const { headline, bio, portrait } = await getAbout()
   return (
     <main className="min-h-screen bg-bg">
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">

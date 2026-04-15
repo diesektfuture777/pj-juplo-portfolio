@@ -1,13 +1,14 @@
 // app/(site)/portfolio/page.jsx
 import PortfolioGrid from '@/components/PortfolioGrid'
-import mockWorks from '@/data/mockWorks'
+import { getAllWorks } from '@/lib/data'
 
 export const metadata = { title: 'Work — PJ Juplo' }
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
+  const works = await getAllWorks()
   return (
     <main className="min-h-screen bg-bg pt-16">
-      <PortfolioGrid works={mockWorks} />
+      <PortfolioGrid works={works} />
     </main>
   )
 }

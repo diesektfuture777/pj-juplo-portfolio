@@ -1,12 +1,12 @@
 // app/(site)/contact/page.jsx
 import { Mail, ExternalLink } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
-import { mockSettings } from '@/data/mockSite'
+import { getSettings } from '@/lib/data'
 
 export const metadata = { title: 'Contact — PJ Juplo' }
 
-export default function ContactPage() {
-  const { email, instagram, facebook } = mockSettings
+export default async function ContactPage() {
+  const { email, instagram, facebook } = await getSettings()
   return (
     <main className="min-h-screen bg-bg">
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
