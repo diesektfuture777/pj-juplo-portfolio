@@ -6,7 +6,7 @@ const mockWorks = [
     type: 'photo',
     category: 'Portrait',
     coverImage: null,
-    description: 'A series of portraits shot during the golden hour in Manila.',
+    description: 'A series of portraits shot during the golden hour in Singapore.',
     featured: true,
     publishedAt: '2024-01-15',
   },
