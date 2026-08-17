@@ -1,8 +1,15 @@
 // app/(site)/about/page.jsx
 import Image from 'next/image'
 import { getAbout } from '@/lib/data'
+import { pageMeta } from '@/lib/site'
 
-export const metadata = { title: 'About — PJ Juplo' }
+export const metadata = pageMeta({
+  title: 'About - PJ Juplo',
+  description:
+    'About PJ Juplo, a Singapore-based photographer and filmmaker working across portrait, commercial, and documentary work.',
+  path: '/about',
+  type: 'profile',
+})
 
 export default async function AboutPage() {
   const { headline, bio, portrait } = await getAbout()

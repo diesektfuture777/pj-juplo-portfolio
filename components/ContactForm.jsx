@@ -81,7 +81,7 @@ export default function ContactForm() {
       </button>
       {status === 'success' && (
         <p className="font-body text-xs text-green-700 tracking-wide">
-          Message sent — I&apos;ll be in touch.
+          Message sent - I&apos;ll be in touch.
         </p>
       )}
       {status === 'error' && (

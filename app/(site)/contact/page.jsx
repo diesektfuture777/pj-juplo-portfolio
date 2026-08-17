@@ -2,8 +2,14 @@
 import { Mail, ExternalLink } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
 import { getSettings } from '@/lib/data'
+import { pageMeta } from '@/lib/site'
 
-export const metadata = { title: 'Contact — PJ Juplo' }
+export const metadata = pageMeta({
+  title: 'Contact - PJ Juplo',
+  description:
+    'Get in touch with PJ Juplo for photography and film commissions, collaborations, or print enquiries.',
+  path: '/contact',
+})
 
 export default async function ContactPage() {
   const { email, instagram, facebook } = await getSettings()
