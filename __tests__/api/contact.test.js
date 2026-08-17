@@ -29,7 +29,7 @@ describe('POST /api/contact', () => {
     const req = { json: async () => validBody }
     const res = await POST(req)
     expect(res.status).toBe(200)
-    expect(spy).toHaveBeenCalledWith('[Contact Form — no RESEND_API_KEY]', validBody)
+    expect(spy).toHaveBeenCalledWith('[Contact Form - no RESEND_API_KEY]', validBody)
     spy.mockRestore()
   })
 })

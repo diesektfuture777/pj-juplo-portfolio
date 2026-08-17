@@ -11,8 +11,8 @@ export async function POST(request) {
     const apiKey = process.env.RESEND_API_KEY
 
     if (!apiKey) {
-      // Resend not configured yet — log submission so nothing is lost in dev
-      console.log('[Contact Form — no RESEND_API_KEY]', { name, email, message })
+      // Resend not configured yet - log submission so nothing is lost in dev
+      console.log('[Contact Form - no RESEND_API_KEY]', { name, email, message })
       return Response.json({ ok: true })
     }
 

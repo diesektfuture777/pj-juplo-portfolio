@@ -1,11 +1,13 @@
 // app/(site)/page.jsx
 import HeroSplit from '@/components/HeroSplit'
 import { getAllWorks } from '@/lib/data'
+import { pageMeta, SITE_TITLE, SITE_DESCRIPTION } from '@/lib/site'
 
-export const metadata = {
-  title: 'PJ Juplo — Photographer & Filmmaker',
-  description: 'Portfolio of PJ Juplo, photographer and filmmaker based in Manila.',
-}
+export const metadata = pageMeta({
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  path: '/',
+})
 
 export default async function HeroPage() {
   const works = await getAllWorks()
